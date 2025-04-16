@@ -7,6 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       <div className="w-full absolute left-0 -bottom-72">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/footer-grid.svg"
           alt="grid"
@@ -36,7 +37,8 @@ const Footer = () => {
             {
                 socialMedia.map((profile)=>(
                     <div key={profile.img} className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
-                        <img src={profile.img} alt={profile.id} width={20} height={20} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={profile.img} alt={`${profile.id}`} width={20} height={20} />
                     </div>
                 ))
             }

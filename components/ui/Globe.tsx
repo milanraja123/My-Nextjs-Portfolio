@@ -91,12 +91,13 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (globeRef.current) {
       _buildData();
       _buildMaterial();
     }
-  }, [globeRef.current]);
+  }, [globeRef.current]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -148,6 +149,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     setGlobeData(filteredPoints);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (globeRef.current && globeData) {
       globeRef.current
@@ -162,7 +164,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         });
       startAnimation();
     }
-  }, [globeData]);
+  }, [globeData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const startAnimation = () => {
     if (!globeRef.current || !globeData) return;
@@ -201,7 +203,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings
       );
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!globeRef.current || !globeData) return;
 
@@ -221,7 +223,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return () => {
       clearInterval(interval);
     };
-  }, [globeRef.current, globeData]);
+  }, [globeRef.current, globeData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -232,12 +234,14 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
 export function WebGLRendererConfig() {
   const { gl, size } = useThree();
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    gl.setPixelRatio(window.devicePixelRatio);
-    gl.setSize(size.width, size.height);
-    gl.setClearColor(0xffaaff, 0);
-  }, []);
+    if (typeof window !== "undefined") {
+      gl.setPixelRatio(window.devicePixelRatio);
+      gl.setSize(size.width, size.height);
+      gl.setClearColor(0xffaaff, 0);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return null;
 }
