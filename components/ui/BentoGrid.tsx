@@ -65,17 +65,16 @@ export const BentoGridItem = ({
           "linear-gradient(90deg,rgba(7,4,29,1) 0% rgba(12,14,35,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && 'flex justify-center'} h-full`}>
+      <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
-          
           {img && (
             <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={img}
-              alt={img}
-              className={cn(imgClassName, "object-cover,object-center")}
-            />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={img}
+                alt={img}
+                className={cn(imgClassName, "object-cover,object-center")}
+              />
             </>
           )}
         </div>
@@ -86,15 +85,15 @@ export const BentoGridItem = ({
         >
           {spareImg && (
             <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={spareImg}
-              alt={spareImg}
-              className={cn(
-                imgClassName,
-                "object-cover,object-center w-full h-full"
-              )}
-            />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={spareImg}
+                alt={spareImg}
+                className={cn(
+                  imgClassName,
+                  "object-cover,object-center w-full h-full"
+                )}
+              />
             </>
           )}
         </div>
@@ -109,30 +108,30 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10 dark:text-neutral-300 select-none">
+          <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-lg z-10 dark:text-neutral-300 select-none">
             {description}
           </div>
-          <div className="font-sans font-bold text-lg text-neutral-600 dark:text-neutral-200 lg:text-3xl max-w-96 z-20 select-none">
+          <div className="font-sans font-bold text-lg text-neutral-600 dark:text-neutral-200 lg:text-2xl max-w-96 z-20 select-none">
             {title}
           </div>
 
           {id === 2 && <GlobeDemo />}
 
-          {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+          {id === 1 && (
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:right-9">
               <div className="flex flex-col gap-3 lg:gap-8">
-                {["React.js", "Next.js", "TypeScript"]?.map((item) => (
+                {["React.js", "Next.js", "TypeScript","Nodejs"]?.map((item) => (
                   <span
                     key={item}
-                    className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="py-2 lg:py-4 lg:px-3 px-3 text-md lg:text-lg opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="py-4 rounded-lg text-center bg-[#10132e]" />
+                {/* <span className="py-4 rounded-lg text-center bg-[#10132e]" /> */}
               </div>
               <div className="flex flex-col gap-3 lg:gap-8">
-                <span className="py-4 rounded-lg text-center bg-[#10132e]" />
+                {/* <span className="py-4 rounded-lg text-center bg-[#10132e]" /> */}
                 {["HTML", "CSS", "JavaScript"]?.map((item) => (
                   <span
                     key={item}
