@@ -33,7 +33,7 @@ const Hero = () => {
             words="Transforming Concepts into Seamless User Experience"
           />
           <p className="text-center text-blue-100 md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl z-20">
-            Hi, i&apos;m Milan, a Frontend Developer from India
+            Hi, I&apos;m Milan, a Frontend Developer from India
           </p>
 
           <Link href="https://www.linkedin.com/in/milan-kumar-44b66321a/" target="_blank">
